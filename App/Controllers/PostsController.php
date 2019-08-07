@@ -6,7 +6,7 @@ use Core\Controller;
 use Core\View;
 
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     public function index()
     {
@@ -15,6 +15,6 @@ class PostController extends Controller
 
     public function create()
     {
-
+        View::render('posts/create.php');
     }
 }

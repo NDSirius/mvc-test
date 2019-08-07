@@ -11,14 +11,14 @@ $router->add(
 $router->add(
     'posts',
     [
-        'controller' => 'PostController',
+        'controller' => 'PostsController',
         'action' => 'index'
     ]
 );
 $router->add(
     'posts/create',
     [
-        'controller' => 'PostController',
+        'controller' => 'PostsController',
         'action' => 'create'
     ]
 );
