@@ -3,7 +3,7 @@
 $router->add(
     '',
     [
-        'controller' => 'home',
+        'controller' => 'Home',
         'action' => 'index'
     ]
 );
@@ -22,3 +22,5 @@ $router->add(
         'action' => 'create'
     ]
 );
+
+

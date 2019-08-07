@@ -11,5 +11,5 @@ $router = new Router();
 
 require_once dirname(__DIR__) . '/routes/web.php';
 
-if(!preg_match('/assets/i', $_SERVER['QUERY_STRING'])) (
-    $router->dispatch($_SERVER['QUERY_STRING']));
+if(!preg_match('/assets/i', $_SERVER['REQUEST_URI'])) (
+    $router->dispatch($_SERVER['REQUEST_URI']));

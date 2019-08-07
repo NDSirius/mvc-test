@@ -18,14 +18,14 @@ class Router
 
     public function add($route, $params = [])
     {
-        // Convert the route to a regular expression: escape forward slashes
+
         $route = preg_replace('/\//', '\\/', $route);
-        // Convert variables e.g. {controller}
+
         $route = preg_replace('/\{([a-z]+)\}/', '(?P<\1>[a-z-]+)', $route);
 
-        // Convert variables with custom regular expressions e.g. {id:\d+}
+
         $route = preg_replace('/\{([a-z]+):([^\}]+)\}/', '(?P<\1>\2)', $route);
-        // Add start and end delimiters, and case insensitive flag
+
         $route = '/^' . $route . '$/i';
 
         $this->routes[$route] = $params;
@@ -36,10 +36,12 @@ class Router
         return $this->routes;
     }
 
+
     public function match($url)
     {
-        foreach ($this->routes as $route => $params) {
-            if (preg_match($route, $url, $matches)) {
+        foreach ($this->routes as $route => $params){
+            if (preg_match($route, $url, $matches))
+            print_r($matches);{
                 preg_match_all('|\(\?P<[\w]+>\\\\(\w[\+])\)|', $route, $types);
                 $step = 0;
                 foreach ($matches as $key => $match) {
@@ -68,13 +70,12 @@ class Router
     {
         $url = trim($url, '/');
         $url = $this->removeQueryStringVariables($url);
-
         if ($this->match($url)) {
-            $this->match($url);
             $controller = $this->params['controller'];
             unset($this->params['controller']);
             $controller = $this->convertToStudlyCaps($controller);
             $controller = $this->getNamespace() . $controller;
+
 
             if (class_exists($controller)) {
                 $action = $this->params['action'];
@@ -89,6 +90,7 @@ class Router
                     ),
                     $this->params
                 );
+
             } else {
                 throw new \Exception("Controller class $controller not found");
             }
