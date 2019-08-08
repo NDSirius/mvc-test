@@ -40,8 +40,7 @@ class Router
     public function match($url)
     {
         foreach ($this->routes as $route => $params){
-            if (preg_match($route, $url, $matches))
-            print_r($matches);{
+            if (preg_match($route, $url, $matches)) {
                 preg_match_all('|\(\?P<[\w]+>\\\\(\w[\+])\)|', $route, $types);
                 $step = 0;
                 foreach ($matches as $key => $match) {

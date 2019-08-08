@@ -1,10 +1,14 @@
 {
     "name": "ndsirius/mvc-project",
-    "require": {},
+    "require": {
+        "ext-pdo": "*"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "Core",
-            "App\\Controllers\\": "App/Controllers"
+            "App\\Controllers\\": "App/Controllers",
+            "App\\Models\\": "App/Models",
+            "App\\": "App"
         }
     }
 }

@@ -6,6 +6,10 @@ namespace Core;
 
 abstract class Controller
 {
+
+    protected $validation = true;
+    protected $data = [];
+
     public function __call($name, $args)
     {
         $method = $name . 'Action';

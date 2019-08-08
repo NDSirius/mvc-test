@@ -22,5 +22,19 @@ $router->add(
         'action' => 'create'
     ]
 );
+$router->add(
+    'posts/store',
+    [
+        'controller' => 'PostsController',
+        'action' => 'store'
+    ]
+);
 
+$router->add(
+    'posts/{id:\d+}',
+    [
+        'controller' => 'PostsController',
+        'action' => 'show'
+    ]
+);
 
