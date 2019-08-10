@@ -3,6 +3,62 @@
 $router->add(
     '',
     [
+        'controller' => 'HomeController',
+        'action' => 'index'
+    ]
+);
+
+$router->add(
+    'home',
+    [
+        'controller' => 'HomeController',
+        'action' => 'index'
+    ]
+);
+
+$router->add(
+    'login',
+    [
+        'controller' => 'AuthController',
+        'action' => 'login'
+    ]
+);
+
+$router->add(
+    'registration',
+    [
+        'controller' => 'AuthController',
+        'action' => 'register'
+    ]
+);
+
+$router->add(
+    'auth',
+    [
+        'controller' => 'AuthController',
+        'action' => 'verify'
+    ]
+);
+
+$router->add(
+    'logout',
+    [
+        'controller' => 'AuthController',
+        'action' => 'logout'
+    ]
+);
+
+$router->add(
+    'user/store',
+    [
+        'controller' => 'UserController',
+        'action' => 'store'
+    ]
+);
+
+$router->add(
+    '',
+    [
         'controller' => 'Home',
         'action' => 'index'
     ]
